@@ -1,0 +1,17 @@
+
+.label {
+    -fx-text-fill: black;
+}
+.text-field, .button, .toggle-button,.table-view {
+    -fx-border-color: red;
+    -fx-text-fill: black;
+}
+.text-field:hover, .text-field:focused, .table-cell:hover,.table-cell:focused, .toggle-button:hover, .toggle-button:focused {
+    -fx-border-color: white;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-border-color: grey;
+}

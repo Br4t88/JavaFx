@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.NetController">
+    <children>
+        <TableView fx:id="tv" GridPane.columnIndex="7" GridPane.rowIndex="0"
+                   GridPane.columnSpan="24" GridPane.rowSpan="15">
+            <columns>
+                <TableColumn fx:id="tc1" prefWidth="100.0" text="First Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tc2" prefWidth="100.0" text="Last Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tc3" prefWidth="100.0" text="Address">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="address"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tc4" prefWidth="100.0" text="Speed (mb/s)">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="speed"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tc5" prefWidth="100.0" text="Bandwidth">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bandwidth"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tc6" prefWidth="100.0" text="Duration">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="duration"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <Label  GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="6"/>
+        <Label  GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="6"/>
+
+        <TextField promptText="First name" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="6"
+                   fx:id="firstName"/>
+        <TextField promptText="Last name" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="6"
+                    fx:id="lastName"/>
+        <TextField promptText="Address" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="6"
+                    fx:id="address"/>
+
+        <Label text="Speed (mb/s):" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="3"/>
+
+        <ToggleButton text="2" GridPane.columnIndex="0" GridPane.rowIndex="7" toggleGroup="$speed" fx:id="speed2">
+            <toggleGroup>
+                <ToggleGroup fx:id="speed"/>
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton text="5" GridPane.columnIndex="1" GridPane.rowIndex="7" toggleGroup="$speed" fx:id="speed5"/>
+        <ToggleButton text="10" GridPane.columnIndex="2" GridPane.rowIndex="7" toggleGroup="$speed" fx:id="speed10"/>
+        <ToggleButton text="20" GridPane.columnIndex="3" GridPane.rowIndex="7" toggleGroup="$speed" fx:id="speed20"/>
+        <ToggleButton text="50" GridPane.columnIndex="4" GridPane.rowIndex="7" toggleGroup="$speed" fx:id="speed50"/>
+        <ToggleButton text="100" GridPane.columnIndex="5" GridPane.rowIndex="7" toggleGroup="$speed" fx:id="speed100"/>
+
+        <Label text="Bandwidth:" GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="3"/>
+
+
+
+        <ToggleButton text="1" GridPane.columnIndex="0" GridPane.rowIndex="9" toggleGroup="$band" fx:id="band1">
+            <toggleGroup>
+                <ToggleGroup fx:id="band"/>
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton text="5" GridPane.columnIndex="1" GridPane.rowIndex="9" toggleGroup="$band" fx:id="band5"/>
+        <ToggleButton text="10" GridPane.columnIndex="2" GridPane.rowIndex="9" toggleGroup="$band" fx:id="band10"/>
+        <ToggleButton text="100" GridPane.columnIndex="3" GridPane.rowIndex="9" GridPane.columnSpan="3"
+                      toggleGroup="$band" fx:id="band100"/>
+        <ToggleButton text="Flat" GridPane.columnIndex="4" GridPane.rowIndex="9" GridPane.columnSpan="2"
+                      toggleGroup="$band" fx:id="bandflat"/>
+
+        <Label text="Duration:" GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.columnSpan="3"/>
+
+
+        <ToggleButton text="1 year" GridPane.columnIndex="0" GridPane.rowIndex="11" GridPane.columnSpan="3"
+                      toggleGroup="$years" fx:id="duration1">
+            <toggleGroup>
+                <ToggleGroup fx:id="years"/>
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton text="2 years" GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.columnSpan="3"
+                      toggleGroup="$years" fx:id="duration2"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="12" />
+
+        <Button text="Save Package" GridPane.columnIndex="0" GridPane.rowIndex="13"
+                GridPane.columnSpan="4" GridPane.halignment="RIGHT" onAction="#savePackage" fx:id="save"/>
+        <Button text="Clear Form" GridPane.columnIndex="3" GridPane.rowIndex="13"
+                GridPane.columnSpan="3" GridPane.halignment="RIGHT" onAction="#clearPackage" fx:id="clear"/>
+        <Button text="Delete Table Row" GridPane.columnIndex="0" GridPane.rowIndex="14"
+                GridPane.columnSpan="6" GridPane.halignment="RIGHT" fx:id="delete" onAction="#deletePackage"/>
+
+
+    </children>
+</GridPane>
